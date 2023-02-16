@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="Empleado.Empleado"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="Clases.Departamento"/>
+    <fullyQualifiedTypeName name="Clases.Trabajo"/>
+    <fullyQualifiedTypeName name="Clases.IntGestionEmpresa"/>
+    <fullyQualifiedTypeName name="Clases.Localidad"/>
+    <fullyQualifiedTypeName name="Clases.Empleado"/>
+    <fullyQualifiedTypeName name="Clases.Empresa"/>
+    <fullyQualifiedTypeName name="Profesor"/>
+    <fullyQualifiedTypeName name="Alumno"/>
+    <fullyQualifiedTypeName name="Administrativo"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="InstitutoDao"/>
+</qualifiedTypeNameHistroy>

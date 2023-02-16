@@ -1,0 +1,9 @@
+1675699495710	Delete element
+1675699517471	Rename type 'TestingEpleado'
+1675707835326	Rename field 'dirreccion'
+1675707870400	Rename method 'getDirreccion'
+1675707882377	Rename method 'setDirreccion'
+1675712325844	Rename local variable 'busquedaCoincidentes'
+1675712834291	Rename type 'MainEmpresa'
+1675712891777	Delete element
+1675798054575	Rename local variable 'emp'
