@@ -42,7 +42,7 @@ public class Administrativo extends Persona{
 
 	@Override
 	public void trabajar() {
-		System.out.println("El administrativo "+getNombre()+" va a realizar estas tareas: "+getTareas());
+		System.out.println("El administrativo "+getNombre()+" va a realizar estas tareas: hacer matrículas, controlar asistencia");
 		
 	}
 	

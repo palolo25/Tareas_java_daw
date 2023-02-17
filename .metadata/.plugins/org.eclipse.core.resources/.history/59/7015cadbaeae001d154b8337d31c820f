@@ -13,6 +13,13 @@ public class Profesor extends Persona{
 		super(nif, nombre, direccion, telefono);
 	}
 
+	
+
+	
+	
+
+	
+
 	@Override
 	public String toString() {
 		return "Profesor[ getNif()=" + getNif() + ", getNombre()=" + getNombre()

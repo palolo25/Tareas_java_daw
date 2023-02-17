@@ -30,7 +30,7 @@ public class Alumno extends Persona {
 
 	@Override
 	public void trabajar() {
-		System.out.println("El alumno"+getNombre()+"va a estudiar para el curso "+getCurso());
+		System.out.println("El alumno"+getNombre()+"va a estudiar para el curso 1º Bachillerato");
 		
 	}
 	
