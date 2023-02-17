@@ -14,4 +14,5 @@
     <fullyQualifiedTypeName name="Administrativo"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="InstitutoDao"/>
+    <fullyQualifiedTypeName name="DAO.InstitutoDao"/>
 </qualifiedTypeNameHistroy>
