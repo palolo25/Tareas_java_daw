@@ -1,0 +1,26 @@
+package conexion;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class Conexion {
+
+	public static void main(String[] args) {
+		String url = "jdbc:mysql://127.0.1.1:3306/clientes_proyectos_empleados_2023?serverTimezone=UTC";
+		String username = "root";
+		String pwd = "Pablo6364";
+		Connection conn = null;
+		try {
+			 conn = DriverManager.getConnection(url,username,pwd);
+			System.out.println("Conexion establecida");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			
+			System.out.println("Conexion NOOO establecida");
+		}
+
+	}
+
+}
