@@ -2,13 +2,13 @@ package modelo.dao;
 
 import java.util.List;
 
-import modelo.javabeans.Factura;
+import modelo.javabeans.Clientes;
 
 public interface FacturaDao {
 
 	
-	List<Factura> buscarTodas();
-	Factura buscarUna(String idFactura);
+	List<Clientes> buscarTodas();
+	Clientes buscarUna(String idFactura);
 	
 	
 }

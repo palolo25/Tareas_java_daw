@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import modelo.javabeans.Factura;
+import modelo.javabeans.Clientes;
 
 public class FacturaDaoImplMy8 implements FacturaDao {
 
@@ -30,16 +30,16 @@ public class FacturaDaoImplMy8 implements FacturaDao {
 	}
 
 	@Override
-	public List<Factura> buscarTodas() {
+	public List<Clientes> buscarTodas() {
 		 
 		 sql = "select * from facturas";
-		    List<Factura> lista = new ArrayList<>();
+		    List<Clientes> lista = new ArrayList<>();
 		try {
 				ps = conn.prepareStatement(sql);
 				rs = ps.executeQuery();
 				
 				while(rs.next()) {
-					Factura factura = new Factura();
+					Clientes factura = new Clientes();
 					factura.setIdfactura(rs.getString("id_factura"));
 					factura.setDescripcion(rs.getString("descripcion"));
 					factura.setIdproyecto(rs.getString("id_proyecto"));
@@ -55,15 +55,15 @@ public class FacturaDaoImplMy8 implements FacturaDao {
 	}
 
 	@Override
-	public Factura buscarUna(String idFactura) {
+	public Clientes buscarUna(String idFactura) {
 		sql = "select * from facturas where is_factura = ?";
-		Factura factura = null;
+		Clientes factura = null;
 		try {
 			ps = conn.prepareStatement(sql);
 			ps.setString(1, factura.getIdfactura());
 			rs = ps.executeQuery();
 			if(rs.next()) {
-				factura = new Factura();
+				factura = new Clientes();
 				factura.setIdfactura(rs.getString("id_factura"));
 				
 			}

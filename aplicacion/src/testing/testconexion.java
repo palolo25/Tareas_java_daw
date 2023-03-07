@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import modelo.javabeans.Factura;
+import modelo.javabeans.Clientes;
 
 public class testconexion {
 
@@ -30,13 +30,13 @@ public class testconexion {
 		PreparedStatement ps = null;
 	    ResultSet rs = null; 
 	    sql = "select * from facturas";
-	    List<Factura> lista = new ArrayList<>();
+	    List<Clientes> lista = new ArrayList<>();
 	    try {
 			ps = conn.prepareStatement(sql);
 			rs = ps.executeQuery();
 			
 			while(rs.next()) {
-				Factura factura = new Factura();
+				Clientes factura = new Clientes();
 				factura.setIdfactura(rs.getString("id_factura"));
 				factura.setDescripcion(rs.getString("descripcion"));
 				factura.setIdproyecto(rs.getString("id_proyecto"));
@@ -49,7 +49,7 @@ public class testconexion {
 			e.printStackTrace();
 		}
 	    
-	    for(Factura ele: lista) {
+	    for(Clientes ele: lista) {
 	    	System.out.println(ele);
 	    }
 	    

@@ -2,7 +2,7 @@ package modelo.javabeans;
 
 import java.util.Objects;
 
-public class Factura {
+public class Clientes {
 
 	private String idfactura;
 	private String descripcion;
@@ -10,7 +10,7 @@ public class Factura {
 	
 	
 	
-	public Factura() {
+	public Clientes() {
 		super();
 	}
 
@@ -67,7 +67,7 @@ public class Factura {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Factura other = (Factura) obj;
+		Clientes other = (Clientes) obj;
 		return Objects.equals(idfactura, other.idfactura) && Objects.equals(idproyecto, other.idproyecto);
 	}
 
