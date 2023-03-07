@@ -1,0 +1,12 @@
+package javabeans;
+
+public class Clientes {
+
+	private String cif;
+	private String nombre;
+	private String apellidos;
+	private String domicilio;
+	private float facturacionAnual;
+	private int numeroEmpleados;
+	
+}

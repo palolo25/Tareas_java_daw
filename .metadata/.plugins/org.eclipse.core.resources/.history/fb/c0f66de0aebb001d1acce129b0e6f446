@@ -1,0 +1,27 @@
+package modelo.dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class FacturaDaoImplMy8 {
+
+	private Connection conn;
+	private PreparedStatement ps; 
+	private ResultSet rs;
+	private String sql;
+	
+	public FacturaDaoImplMy8() {
+		
+		try {
+			conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/casaPrueba?serverTimezone=UTC" , "root" , "Pablo6364");
+			System.out.println("Conectado");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			System.out.println("No conectado :(");
+			e.printStackTrace();
+		}
+	}
+}

@@ -1,0 +1,82 @@
+package modelo.javabeans;
+
+import java.util.Objects;
+
+public class Factura {
+
+	private String idfactura;
+	private String descripcion;
+	private String idproyecto;
+	
+	
+	
+	public Factura() {
+		super();
+	}
+
+
+
+	public String getIdfactura() {
+		return idfactura;
+	}
+
+
+
+	public void setIdfactura(String idfactura) {
+		this.idfactura = idfactura;
+	}
+
+
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+
+
+	public String getIdproyecto() {
+		return idproyecto;
+	}
+
+
+
+	public void setIdproyecto(String idproyecto) {
+		this.idproyecto = idproyecto;
+	}
+
+
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(idfactura, idproyecto);
+	}
+
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Factura other = (Factura) obj;
+		return Objects.equals(idfactura, other.idfactura) && Objects.equals(idproyecto, other.idproyecto);
+	}
+
+
+
+	
+	
+	
+	
+	
+
+}

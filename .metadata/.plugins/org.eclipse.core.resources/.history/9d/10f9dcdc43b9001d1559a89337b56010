@@ -1,0 +1,9 @@
+package modelo.javabeans;
+
+public class Familia {
+
+	private String idfactura;
+	private String descripcion;
+	private 
+
+}

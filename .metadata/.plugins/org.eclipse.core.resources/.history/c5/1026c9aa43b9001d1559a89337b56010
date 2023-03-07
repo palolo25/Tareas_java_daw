@@ -1,0 +1,10 @@
+package modelo.javabeans;
+
+public class Familia {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

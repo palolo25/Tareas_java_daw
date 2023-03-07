@@ -1,0 +1,83 @@
+package daos;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javabeans.Clientes;
+import modelo.javabeans.Factura;
+
+public class ClienteDaoImpleMy8 implements ClienteDao {
+
+	
+	private Connection conn;
+	private PreparedStatement ps; 
+	private ResultSet rs;
+	private String sql;
+	
+	public ClienteDaoImpleMy8() {
+		try {
+			 conn = DriverManager.getConnection("jdbc:mysql://127.0.1.1:3306/clientes_proyectos_empleados_2023?serverTimezone=UTC","root","Pablo6364");
+			System.out.println("Conexion establecida");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			
+			System.out.println("Conexion NOOO establecida");
+		}
+	}
+
+	@Override
+	public boolean altaCliente(Clientes clientes) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean eliminarCliente(Clientes clientes) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean modificarCliente(Clientes clientes) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public List<Clientes> buscarTodos() {
+		 sql = "select * from facturas";
+		    List<Clientes> lista = new ArrayList<>();
+		try {
+				ps = conn.prepareStatement(sql);
+				rs = ps.executeQuery();
+				
+				while(rs.next()) {
+					Clientes clientes = new Clientes();
+					clientes.setCif(rs.getString("cif"));
+					clientes.setNombre(rs.getString("nombre"));
+					clientes.setApellidos(rs.getString("apellidos"));
+					clientes.setDomicilio(rs.getString("domicilio"));
+					clientes.setFacturacionAnual(rs.getFloat("facturacion_anual"));
+					clientes.setNumeroEmpleados(rs.getInt("numero_empleados"));
+					lista.add(clientes);
+				}
+				
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		return lista;
+	}
+
+	@Override
+	public Clientes buscarUno(String cif) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

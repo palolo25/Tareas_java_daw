@@ -1,0 +1,56 @@
+package modelo.dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
+
+import modelo.javabeans.Factura;
+
+public class FacturaDaoImplMy8 implements FacturaDao {
+
+	private Connection conn;
+	private PreparedStatement ps; 
+	private ResultSet rs;
+	private String sql;
+	
+	public FacturaDaoImplMy8() {
+		
+		try {
+			conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/casaPrueba?serverTimezone=UTC" , "root" , "Pablo6364");
+			System.out.println("Conectado");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			System.out.println("No conectado :(");
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	public List<Factura> buscarTodas() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Factura buscarUna(String idFactura) {
+		sql = "select * from facturas where is_factura";
+		Factura factura = null;
+		try {
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, idFactura);
+			rs = ps.executeQuery();
+			if(rs.next()) {
+				factura = new Factura();
+				factura.setIdfactura(rs.getString("id_factura"));
+				factura.setDescripcion(rs.getString("descripcion"));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+}

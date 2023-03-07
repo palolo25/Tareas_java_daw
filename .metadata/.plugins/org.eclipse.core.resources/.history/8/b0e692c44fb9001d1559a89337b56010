@@ -1,0 +1,53 @@
+package testing;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import com.mysql.cj.jdbc.JdbcPreparedStatement;
+
+import modelo.javabeans.Familia;
+
+public class testconexion {
+
+	public static void main(String[] args) {
+		String url = "jdbc:mysql://127.0.0.1:3306/casaPrueba?serverTimezone=UTC";
+		String username = "root";
+		String pwd = "Pablo6364";
+		Connection conn = null;
+		try {
+			 conn = DriverManager.getConnection(url,username,pwd);
+			System.out.println("Conexion establecida");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			
+			System.out.println("Conexion NOOO establecida");
+		}
+		
+		String sql = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		sql = "selec * from facturas where id_factura = ? "; 
+		Familia factura = null;
+		try {
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, 2);
+			rs = ps.executeQuery();
+			
+			if(rs.next()) {
+			 factura = new Familia();
+			 factura.setIdfactura(rs.getString("id_facturas"));
+			 factura.setDescripcion(rs.getString("descripcion"));
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println(factura);
+	}
+
+}

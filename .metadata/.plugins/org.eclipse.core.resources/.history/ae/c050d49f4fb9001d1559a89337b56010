@@ -1,0 +1,54 @@
+package modelo.javabeans;
+
+public class Familia {
+
+	private String idfactura;
+	private String descripcion;
+	private String idproyecto;
+	
+	
+	
+	public Familia() {
+		super();
+	}
+
+
+
+	public String getIdfactura() {
+		return idfactura;
+	}
+
+
+
+	public void setIdfactura(String idfactura) {
+		this.idfactura = idfactura;
+	}
+
+
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+
+
+	public String getIdproyecto() {
+		return idproyecto;
+	}
+
+
+
+	public void setIdproyecto(String idproyecto) {
+		this.idproyecto = idproyecto;
+	}
+	
+	
+	
+
+}
