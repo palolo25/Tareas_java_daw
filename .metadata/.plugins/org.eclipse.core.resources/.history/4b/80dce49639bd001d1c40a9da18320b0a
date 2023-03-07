@@ -5,10 +5,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
-import javabeans.Clientes;
 import javabeans.Departamentos;
 
 public class DepartamentoDaoImplMy8 implements DepartamentoDao {
@@ -50,25 +48,8 @@ public class DepartamentoDaoImplMy8 implements DepartamentoDao {
 
 	@Override
 	public List<Departamentos> buscarTodos() {
-		 sql = "select * from departamentos";
-		    List<Departamentos> listadepar = new ArrayList<>();
-		try {
-				ps = conn.prepareStatement(sql);
-				rs = ps.executeQuery();
-				
-				while(rs.next()) {
-					Departamentos departamentos = new Departamentos();
-					departamentos.setIdDepar(rs.getInt("Id_depar"));
-					departamentos.setNombre(rs.getString("nombre"));
-					departamentos.setDireccion(rs.getString("direccion"));
-					listadepar.add(departamentos);
-				}
-				
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		return listadepar;
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override

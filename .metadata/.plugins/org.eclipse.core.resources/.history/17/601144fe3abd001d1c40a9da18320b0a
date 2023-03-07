@@ -51,7 +51,7 @@ public class DepartamentoDaoImplMy8 implements DepartamentoDao {
 	@Override
 	public List<Departamentos> buscarTodos() {
 		 sql = "select * from departamentos";
-		    List<Departamentos> listadepar = new ArrayList<>();
+		    List<DepartamentoDao> listadepar = new ArrayList<>();
 		try {
 				ps = conn.prepareStatement(sql);
 				rs = ps.executeQuery();
@@ -61,7 +61,7 @@ public class DepartamentoDaoImplMy8 implements DepartamentoDao {
 					departamentos.setIdDepar(rs.getInt("Id_depar"));
 					departamentos.setNombre(rs.getString("nombre"));
 					departamentos.setDireccion(rs.getString("direccion"));
-					listadepar.add(departamentos);
+					listadepar.add((DepartamentoDao) departamentos);
 				}
 				
 			} catch (SQLException e) {

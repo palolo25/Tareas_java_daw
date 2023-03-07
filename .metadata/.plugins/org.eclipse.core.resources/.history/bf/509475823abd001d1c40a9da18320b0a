@@ -91,10 +91,10 @@ public class ClienteDaoImplMy8 implements ClienteDao {
 					clientes.setCif(rs.getString("cif"));
 				
 				}
-			} catch (SQLException e) {
+			}	 catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-				return null;
+			return null;
 		}
 }

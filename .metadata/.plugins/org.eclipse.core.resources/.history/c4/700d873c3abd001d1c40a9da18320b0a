@@ -81,20 +81,20 @@ public class ClienteDaoImplMy8 implements ClienteDao {
 		
 		sql = "select * from clientes where cif = ?";
 		
-			try {
-				ps = conn.prepareStatement(sql);
-				Clientes clientes = new Clientes();
-				ps.setString(1, clientes.getCif());
-				rs = ps.executeQuery();
-				if(rs.next()) {
-					clientes = new Clientes();
-					clientes.setCif(rs.getString("cif"));
+		try {
+			ps = conn.prepareStatement(sql);
+			Clientes clientes = new Clientes();
+			ps.setString(1, clientes.getCif());
+			rs = ps.executeQuery();
+			if(rs.next()) {
+				clientes = new Clientes();
+				clientes.setCif(rs.getString("cif"));
 				
-				}
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
 			}
-				return null;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
+		return null;
+	}
 }
