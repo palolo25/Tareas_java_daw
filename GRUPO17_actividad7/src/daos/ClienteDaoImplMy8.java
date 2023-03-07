@@ -12,7 +12,7 @@ import javabeans.Clientes;
 
 
 
-public class ClienteDaoImpleMy8 implements ClienteDao {
+public class ClienteDaoImplMy8 implements ClienteDao {
 
 	
 	private Connection conn;
@@ -20,7 +20,7 @@ public class ClienteDaoImpleMy8 implements ClienteDao {
 	private ResultSet rs;
 	private String sql;
 	
-	public ClienteDaoImpleMy8() {
+	public ClienteDaoImplMy8() {
 		try {
 			 conn = DriverManager.getConnection("jdbc:mysql://127.0.1.1:3306/clientes_proyectos_empleados_2023?serverTimezone=UTC","root","Pablo6364");
 			System.out.println("Conexion establecida");
@@ -80,15 +80,15 @@ public class ClienteDaoImpleMy8 implements ClienteDao {
 	public Clientes buscarUno(String cif) {
 		
 		sql = "select * from clientes where cif = ?";
-		Connection conn = null;
+		
 		try {
 			ps = conn.prepareStatement(sql);
-			Clientes clientes;
+			Clientes clientes = new Clientes();
 			ps.setString(1, clientes.getCif());
 			rs = ps.executeQuery();
 			if(rs.next()) {
 				clientes = new Clientes();
-				clientes.setCif(rs.getString(1));
+				clientes.setCif(rs.getString("cif"));
 				
 			}
 		} catch (SQLException e) {

@@ -12,12 +12,9 @@
     <fullyQualifiedTypeName name="Administrativo"/>
     <fullyQualifiedTypeName name="InstitutoDao"/>
     <fullyQualifiedTypeName name="DAO.InstitutoDao"/>
-    <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="com.mysql.cj.jdbc.JdbcPreparedStatement"/>
     <fullyQualifiedTypeName name="modelo.javabeans.Familia"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
-    <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
     <fullyQualifiedTypeName name="java.sql.DriverManager"/>
@@ -25,4 +22,10 @@
     <fullyQualifiedTypeName name="modelo.dao.FacturaDao"/>
     <fullyQualifiedTypeName name="modelo.dao.FacturaDaoImplMy8"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="javabeans.Clientes"/>
+    <fullyQualifiedTypeName name="daos.ClienteDao"/>
+    <fullyQualifiedTypeName name="daos.ClienteDaoImpleMy8"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
 </qualifiedTypeNameHistroy>
