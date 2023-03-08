@@ -22,10 +22,17 @@
     <fullyQualifiedTypeName name="modelo.dao.FacturaDao"/>
     <fullyQualifiedTypeName name="modelo.dao.FacturaDaoImplMy8"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
-    <fullyQualifiedTypeName name="java.lang.String"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="javabeans.Clientes"/>
     <fullyQualifiedTypeName name="daos.ClienteDao"/>
     <fullyQualifiedTypeName name="daos.ClienteDaoImpleMy8"/>
     <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="javabeans.Departamentos"/>
+    <fullyQualifiedTypeName name="java.sql.Date"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="javabeans.Empleados"/>
+    <fullyQualifiedTypeName name="daos.DepartamentoDao"/>
+    <fullyQualifiedTypeName name="daos.DepartamentoDaoImplMy8"/>
+    <fullyQualifiedTypeName name="daos.EmpleadoDao"/>
+    <fullyQualifiedTypeName name="daos.EmpleadoDaoImplMy8"/>
 </qualifiedTypeNameHistroy>
