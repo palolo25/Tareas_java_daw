@@ -6,9 +6,9 @@ import javabeans.Clientes;
 
 public interface ClienteDao {
 
-	boolean altaCliente(Clientes clientes);
-	boolean eliminarCliente(Clientes clientes);
-	boolean modificarCliente(Clientes clientes);
+    int altaCliente(Clientes clientes);
+	int eliminarCliente(Clientes clientes);
+	int modificarCliente(Clientes clientes);
 	List<Clientes> buscarTodos();
 	Clientes buscarUno(String cif);
 	

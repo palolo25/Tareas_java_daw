@@ -73,8 +73,27 @@ public class DepartamentoDaoImplMy8 implements DepartamentoDao {
 
 	@Override
 	public Departamentos buscarUno(int idDepar) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		sql = "select * from departamentos where id_depar = ?";
+		Departamentos departamentos = null;
+		try {
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, idDepar);
+			rs = ps.executeQuery();
+			if(rs.next()) {
+			 departamentos = new Departamentos();
+				
+				departamentos.setIdDepar(rs.getInt(1));
+				departamentos.setNombre(rs.getString("nombre"));
+				departamentos.setDireccion(rs.getString("direccion"));
+				
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return  departamentos;
 	}
 
 }

@@ -11,7 +11,9 @@ public class TestingClientes {
 		ClienteDao cdao = new ClienteDaoImplMy8();
 		
 		System.out.println(cdao.buscarTodos());
-		System.out.println(cdao.buscarUno("cif"));
+		System.out.println("\n");
+		System.out.println(cdao.buscarUno("A22222222"));
+		System.out.println(cdao.buscarUno("B33333333"));
 	}
 
 }

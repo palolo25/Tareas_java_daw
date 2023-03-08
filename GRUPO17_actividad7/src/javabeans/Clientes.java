@@ -8,7 +8,7 @@ public class Clientes {
 	private String nombre;
 	private String apellidos;
 	private String domicilio;
-	private float facturacionAnual;
+	private double facturacionAnual;
 	private int numeroEmpleados;
 	
 	
@@ -57,12 +57,12 @@ public class Clientes {
 	}
 
 
-	public float getFacturacionAnual() {
+	public double getFacturacionAnual() {
 		return facturacionAnual;
 	}
 
 
-	public void setFacturacionAnual(float facturacionAnual) {
+	public void setFacturacionAnual(double facturacionAnual) {
 		this.facturacionAnual = facturacionAnual;
 	}
 

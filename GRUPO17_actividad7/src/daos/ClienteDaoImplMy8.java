@@ -32,23 +32,7 @@ public class ClienteDaoImplMy8 implements ClienteDao {
 		}
 	}
 
-	@Override
-	public boolean altaCliente(Clientes clientes) {
-		// TODO Auto-generated method stub
-		return false;
-	}
 
-	@Override
-	public boolean eliminarCliente(Clientes clientes) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean modificarCliente(Clientes clientes) {
-		// TODO Auto-generated method stub
-		return false;
-	}
 
 	@Override
 	public List<Clientes> buscarTodos() {
@@ -80,21 +64,49 @@ public class ClienteDaoImplMy8 implements ClienteDao {
 	public Clientes buscarUno(String cif) {
 		
 		sql = "select * from clientes where cif = ?";
-		
+		Clientes clientes = null;
 			try {
 				ps = conn.prepareStatement(sql);
-				Clientes clientes = new Clientes();
-				ps.setString(1, clientes.getCif());
+				ps.setString(1, cif);
 				rs = ps.executeQuery();
 				if(rs.next()) {
 					clientes = new Clientes();
 					clientes.setCif(rs.getString("cif"));
+					clientes.setNombre(rs.getString("nombre"));
+					clientes.setApellidos(rs.getString("apellidos"));
+					clientes.setDomicilio(rs.getString("domicilio"));
+					clientes.setFacturacionAnual(rs.getDouble("facturacion_anual"));
+					clientes.setNumeroEmpleados(rs.getInt("numero_empleados"));
 				
 				}
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-				return null;
+				return clientes;
 		}
+
+
+
+	@Override
+	public int altaCliente(Clientes clientes) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+
+	@Override
+	public int eliminarCliente(Clientes clientes) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+
+	@Override
+	public int modificarCliente(Clientes clientes) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

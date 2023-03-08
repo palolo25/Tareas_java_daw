@@ -12,5 +12,5 @@ public interface DepartamentoDao {
 	boolean eliminarCliente(Departamentos departamentos);
 	boolean modificarCliente(Departamentos departamentos);
 	List<Departamentos> buscarTodos();
-	Departamentos  buscarUno(int idDepar);
+	Departamentos buscarUno(int idDepar);
 }
