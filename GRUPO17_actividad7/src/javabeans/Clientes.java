@@ -15,6 +15,22 @@ public class Clientes {
 	public Clientes() {
 		super();
 	}
+	
+	
+
+
+	public Clientes(String cif, String nombre, String apellidos, String domicilio, double facturacionAnual,
+			int numeroEmpleados) {
+		super();
+		this.cif = cif;
+		this.nombre = nombre;
+		this.apellidos = apellidos;
+		this.domicilio = domicilio;
+		this.facturacionAnual = facturacionAnual;
+		this.numeroEmpleados = numeroEmpleados;
+	}
+
+
 
 
 	public String getCif() {

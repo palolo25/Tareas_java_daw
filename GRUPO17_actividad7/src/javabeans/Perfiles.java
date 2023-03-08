@@ -13,6 +13,16 @@ public class Perfiles {
 		super();
 	}
 
+	
+
+
+	public Perfiles(int idPerfil, String nombre) {
+		super();
+		this.idPerfil = idPerfil;
+		this.nombre = nombre;
+	}
+
+
 
 
 	public int getIdPerfil() {

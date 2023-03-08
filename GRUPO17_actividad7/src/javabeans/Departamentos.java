@@ -13,6 +13,16 @@ public class Departamentos {
 		super();
 	}
 
+	
+
+	public Departamentos(String nombre, String direccion, int idDepar) {
+		super();
+		this.nombre = nombre;
+		this.direccion = direccion;
+		this.idDepar = idDepar;
+	}
+
+
 
 	public String getNombre() {
 		return nombre;
