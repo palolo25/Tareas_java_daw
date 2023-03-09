@@ -8,9 +8,9 @@ import javabeans.Departamentos;
 
 public interface DepartamentoDao {
 
-	boolean altaCliente(Departamentos departamentos);
-	boolean eliminarCliente(Departamentos departamentos);
-	boolean modificarCliente(Departamentos departamentos);
+	int altadepartamento(Departamentos departamentos);
+	int eliminardepartamento(int departamentos);
+	int modificardepartamento(Departamentos departamentos);
 	List<Departamentos> buscarTodos();
 	Departamentos buscarUno(int idDepar);
 }

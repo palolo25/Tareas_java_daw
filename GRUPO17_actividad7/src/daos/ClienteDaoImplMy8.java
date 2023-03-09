@@ -19,6 +19,7 @@ public class ClienteDaoImplMy8 implements ClienteDao {
 	private PreparedStatement ps; 
 	private ResultSet rs;
 	private String sql;
+	private int filas;
 	
 	public ClienteDaoImplMy8() {
 		try {
@@ -90,23 +91,69 @@ public class ClienteDaoImplMy8 implements ClienteDao {
 
 	@Override
 	public int altaCliente(Clientes clientes) {
-		// TODO Auto-generated method stub
-		return 0;
+		sql = "insert into clientes values(?,?,?,?,?,?)";
+		
+		try {
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, clientes.getCif());
+			ps.setString(2, clientes.getNombre());
+			ps.setString(3, clientes.getApellidos());
+			ps.setString(4, clientes.getDomicilio());
+			ps.setDouble(5,clientes.getFacturacionAnual() );
+			ps.setInt(6, clientes.getNumeroEmpleados());
+			
+			filas = ps.executeUpdate();
+			filas = 1;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return filas;
 	}
 
 
 
 	@Override
-	public int eliminarCliente(Clientes clientes) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int eliminarCliente(String clientes) {
+		sql = "delete from clientes where cif = ?";
+		filas = 0;
+		try {
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, clientes);
+			
+			filas= ps.executeUpdate();
+			filas = 1;
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return filas;
 	}
 
 
 
 	@Override
 	public int modificarCliente(Clientes clientes) {
-		// TODO Auto-generated method stub
-		return 0;
+sql = "update clientes set cif nombre = ?," + "apellidos = ?," 
+	+ "domicilio = ?," + "facturacion_anual = ?," + "numero_empleados = ?,"
+		+ "where cif = ?";
+		
+		try {
+			ps = conn.prepareStatement(sql);
+			
+			ps.setString(2, clientes.getNombre());
+			ps.setString(3, clientes.getApellidos());
+			ps.setString(4, clientes.getDomicilio());
+			ps.setDouble(5,clientes.getFacturacionAnual() );
+			ps.setInt(6, clientes.getNumeroEmpleados());
+			
+			filas = ps.executeUpdate();
+			filas = 1;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return filas;
 	}
 }

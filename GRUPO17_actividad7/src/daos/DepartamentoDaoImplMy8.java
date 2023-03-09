@@ -17,7 +17,7 @@ public class DepartamentoDaoImplMy8 implements DepartamentoDao {
 	private PreparedStatement ps; 
 	private ResultSet rs;
 	private String sql;
-	
+	private int filas;
 	public DepartamentoDaoImplMy8() {
 		try {
 			 conn = DriverManager.getConnection("jdbc:mysql://127.0.1.1:3306/clientes_proyectos_empleados_2023?serverTimezone=UTC","root","Pablo6364");
@@ -30,23 +30,7 @@ public class DepartamentoDaoImplMy8 implements DepartamentoDao {
 		}
 	}
 
-	@Override
-	public boolean altaCliente(Departamentos departamentos) {
-		// TODO Auto-generated method stub
-		return false;
-	}
 
-	@Override
-	public boolean eliminarCliente(Departamentos departamentos) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean modificarCliente(Departamentos departamentos) {
-		// TODO Auto-generated method stub
-		return false;
-	}
 
 	@Override
 	public List<Departamentos> buscarTodos() {
@@ -94,6 +78,69 @@ public class DepartamentoDaoImplMy8 implements DepartamentoDao {
 			e.printStackTrace();
 		}
 		return  departamentos;
+	}
+
+
+
+	@Override
+	public int altadepartamento(Departamentos departamentos) {
+		sql = "insert into departamentos values(?,?,?)";
+		try {
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, departamentos.getIdDepar());
+			ps.setString(2, departamentos.getNombre());
+			ps.setString(3, departamentos.getDireccion());
+			
+			filas= ps.executeUpdate();
+			filas = 1;
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return filas;
+	}
+
+
+
+	@Override
+	public int eliminardepartamento(int departamentos) {
+		sql = "delete from departamentos where id_depar = ?";
+		filas = 0;
+		try {
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, departamentos);
+			
+			filas= ps.executeUpdate();
+			filas = 1;
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return filas;
+	}
+
+
+
+	@Override
+	public int modificardepartamento(Departamentos departamentos) {
+		sql = "update departamentos set id_depar = ?, " + "nombre = ?," + "direccion = ?"
+	+ " where id_depar = ? ";
+		try {
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, departamentos.getIdDepar());
+			ps.setString(2, departamentos.getNombre());
+			ps.setString(3, departamentos.getDireccion());
+			
+			filas= ps.executeUpdate();
+			filas = 1;
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return filas;
 	}
 
 }

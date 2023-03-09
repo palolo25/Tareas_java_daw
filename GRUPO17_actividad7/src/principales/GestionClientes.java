@@ -6,38 +6,70 @@ public class GestionClientes {
 
 	public static void main(String[] args) {
 		
-		Scanner entrada = new Scanner(System.in);
-	    int opcion = 0;
-	    do {
-	        System.out.println("1. Alta del Cliente");
-	        System.out.println("2. Buscar un Cliente");
-	        System.out.println("3. Mostrar Todos");
-	        System.out.println("4. Eliminar un cliente");
-	        System.out.println("5. Salir");
-	        System.out.println("Escriba una opcion: ");
-	        opcion = entrada.nextInt();
-	        switch (opcion) {
-	            case 1:
-	                // Código para dar de alta un cliente
-	                break;
-	            case 2:
-	                // Código para buscar un cliente
-	                break;
-	            case 3:
-	                // Código para mostrar todos los clientes
-	                break;
-	            case 4:
-	                // Código para eliminar un cliente
-	                break;
-	            case 5:
-	                System.out.println("Saliendo del programa...");
-	                break;
-	            default:
-	                System.out.println("Opción inválida. Intente de nuevo.");
-	                break;
-	        }
-	    } while (opcion != 5);
+	    while (true) {
+            // Mostrar el menu
+            mostrarMenu();
+
+            // Leer la opcion del usuario
+            int opcion = leerOpcion();
+
+            // Ejecutar la opcion elegida por el usuario
+            switch(opcion) {
+                case 1:
+                    altaCliente();
+                    break;
+                case 2:
+                    buscarCliente();
+                    break;
+                case 3:
+                    mostrarClientes();
+                    break;
+                case 4:
+                    eliminarCliente();
+                    break;
+                case 5:
+                    // Salir del programa
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("Opcion invalida");
+                    break;
+            }
+        }
+    }
+
+    static void mostrarMenu() {
+        System.out.println("----- Menu -----");
+        System.out.println("1. Alta del Cliente");
+        System.out.println("2. Buscar un Cliente");
+        System.out.println("3. Mostrar Todos");
+        System.out.println("4. Eliminar un cliente");
+        System.out.println("5. Salir");
+    }
+
+    static int leerOpcion() {
+        @SuppressWarnings("resource")
+		Scanner scanner = new Scanner(System.in);
+        System.out.print("Ingrese una opcion: ");
+        return scanner.nextInt();
+    }
+
+    static void altaCliente() {
+        // Implementar la logica para dar de alta a un cliente
+    }
+
+    static void buscarCliente() {
+        // Implementar la logica para buscar un cliente
+    }
+
+    static void mostrarClientes() {
+        // Implementar la logica para mostrar todos los clientes
+    }
+
+    static void eliminarCliente() {
+        // Implementar la logica para eliminar un cliente
+    }
 
 	}
 
-}
+

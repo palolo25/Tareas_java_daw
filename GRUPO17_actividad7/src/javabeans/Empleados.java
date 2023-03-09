@@ -5,6 +5,7 @@ import java.util.Objects;
 
 public class Empleados {
 
+	/*creamos los atributos requeridos para la clase empleado*/
 	private int idEmpleado;
 	private String nombre;
 	private String apellido;
@@ -18,7 +19,7 @@ public class Empleados {
 	private int idDepar;
 	
 	
-	
+	/*creamos el constructor*/
 	public Empleados() {
 		super();
 	}
@@ -41,7 +42,8 @@ public class Empleados {
 		this.idDepar = idDepar;
 	}
 
-
+	/*generamos todos los getter and setter de la clase
+	 */
 
 	public double salarioMensual(int meses) {
 		return salario / meses;
@@ -184,6 +186,8 @@ public class Empleados {
 		return idEmpleado == other.idEmpleado;
 	}
 
+	/*creamos el toString con todos los valores*/
+	
 	@Override
 	public String toString() {
 		return "Empleados [idEmpleado=" + idEmpleado + ", nombre=" + nombre + ", apellido=" + apellido + ", correo="

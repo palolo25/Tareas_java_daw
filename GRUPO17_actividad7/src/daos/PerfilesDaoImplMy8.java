@@ -114,7 +114,21 @@ public class PerfilesDaoImplMy8 implements PerfilesDao{
 
 	@Override
 	public int modificarPerfiles(Perfiles perfiles) {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		sql = "update perfiles set id_perfil = ? ," + " nombre = ?," + " where id_perfil = ? ";
+		filas = 0;
+		try {
+			ps = conn.prepareStatement(sql);
+			ps.setInt(2, perfiles.getIdPerfil());
+			ps.setString(1, perfiles.getNombre());
+			
+			filas = ps.executeUpdate();
+			filas = 1;
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return filas;
 	}
 }
